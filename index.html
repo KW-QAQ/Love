@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+
+		<div id="content">
+<!--			<audio id="audio" src=""></audio>-->
+			<div id="code">
+				<span class="comments">/*</span><br />
+				<span class="space"/><span class="comments">可能冥冥之中，真的有缘分这种说法</span><br />
+				<span class="space"/><span class="comments">从来没有想到，会这么突如其然的遇到你</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+
+				<br/>
+
+				<span class="comments">// Aug 19, 2020 </span><br />
+				本该平凡的一天，却因一条动态与你结缘<br/>
+				你的出现，带给了我,太多的惊喜。<br />
+				我甚至无法控制自己，想要跟你多多联系<br />
+				但，刚开始过度的热情，却将 “慢热” 的你越推越远<br/>
+				渐渐的，我们开始疏远，甚至不再联系。<br/>
+				<br/>
+
+				<span class="comments">//Nov 28, 2020 </span><br />
+				正当我以为已经要结束的时候<br/>
+				上天就像跟我开了一个玩笑一样，你重新出现在了我的生活里<br />
+				我一如既往的惊喜，开心,每次聊天都无法掩饰心中的喜悦。<br/>
+				但同时，也伴随着一丝困惑,一些害怕<br/>
+				困惑你的突然出现，害怕你的突然离开<br/>
+				<br/>
+
+				<span class="comments">//Dec 11, 2020</span><br />
+				正如我所说的那样，我所有的勇气，都来自于你<br/>
+				在后面这段时间的相处中<br/>
+				我越来越确定，自己对你的喜欢<br/>
+				也越来越肯定，你对我的重要<br/>
+				<br/>
+
+				我知道自己不够好，有很多缺点<br/>
+				我也知道未来不太容易<br/>
+				但我觉得遇见你不容易，错过你会很可惜<br/>
+				我真的不想错过你<br/>
+				我真的很喜欢你<br/>
+				真的很希望以后的日子里有你<br/>
+
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						晓玥，做我女朋友吧
+<!--						<div id="elapseClock"></div>-->
+						<div style="margin-left: 100px" onclick="success()">可以</div>
+						<div style="margin-left: 100px" onclick="fail()">NO</div>
+					</div>
+
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">- Kevin</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--<div id="copyright">
+			Inspired by <a href="http://www.openrise.com/lab/FlowerPower/">FlowerPower</a> project.<br />
+			Copyright © 2011 <a href='http://hackerzhou.me'>hackerzhou.me</a> 2009-2011
+		</div>-->
+	</div>
+	<script type="text/javascript">
+		var audio= new Audio("./music.flac");//这里的路径写上mp3文件在项目中的绝对路径
+
+		audio.play();//播放
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2010, 10, 2);
+		together.setHours(20);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+
+			}, 40000);
+
+			// timeElapse(together);
+			// setInterval(function () {
+			// 	timeElapse(together);
+			//
+			// }, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+
+		function success(){
+
+			window.location.href='success.html';
+		}
+		function fail(){
+			alert("不允许拒绝")
+		}
+	</script>
+</body>
+</html>
